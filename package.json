@@ -1,0 +1,23 @@
+{
+  "name": "ninjaone-project",
+  "version": "1.0.0",
+  "description": "automation assessment from ninjaOne",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusvieira99/ninjaone-assessment.git"
+  },
+  "author": "Matheus Vieira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusvieira99/ninjaone-assessment/issues"
+  },
+  "homepage": "https://github.com/matheusvieira99/ninjaone-assessment#readme",
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "testcafe": "^2.0.1"
+  }
+}
