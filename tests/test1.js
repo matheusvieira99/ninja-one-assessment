@@ -1,5 +1,7 @@
 import { Selector } from "testcafe";
 import DevicesPage from '../pages/DevicesPage';
+import Logger from 'js-logger';
+Logger.useDefaults();
 
     fixture('test1')
         .page("http://localhost:3001");
@@ -30,22 +32,27 @@ import DevicesPage from '../pages/DevicesPage';
         
         //step 2
         //looking for the types on frontend and checking values
+        Logger.info("Checking types...");
         for (let i = 0; i < json.length; i++) {
-            //console.log(await DevicesPage.findDeviceType(getDeviceTypeApi[i]).innerText);
+            Logger.info("API info: " + getDeviceTypeApi[i] + " ---- " + "UI info: " + await DevicesPage.findDeviceType(getDeviceTypeApi[i]).innerText);
             await t
-                .expect(DevicesPage.findDeviceType(getDeviceTypeApi[i]).innerText).eql(getDeviceTypeApi[i]);
+            .expect(DevicesPage.findDeviceType(getDeviceTypeApi[i]).innerText).eql(getDeviceTypeApi[i]);
         }
+        Logger.info("------------------");
 
         //looking for the capacities on frontend and checking values
+        Logger.info("Checking capacities...");
         for (let i = 0; i < json.length; i++) {
-            //console.log(await DevicesPage.findDeviceCapacity(getDeviceCapacityApi[i]).innerText);
+            Logger.info("API info: " + getDeviceCapacityApi[i] + " ---- " + "UI info: " + await DevicesPage.findDeviceCapacity(getDeviceCapacityApi[i]).innerText);
             await t
                 .expect(DevicesPage.findDeviceCapacity(getDeviceCapacityApi[i]).innerText).eql(`${getDeviceCapacityApi[i]} GB`);
         }
+        Logger.info("------------------");
 
         //looking for the names on frontend and checking values
+        Logger.info("Checking names...");
         for (let i = 0; i < json.length; i++) {
-            //console.log(await DevicesPage.findDeviceName(firstDeviceApi[i]).innerText);
+            Logger.info("API info: " + getDeviceNameApi[i] + " ---- " + "UI info: " + await DevicesPage.findDeviceName(getDeviceNameApi[i]).innerText);
             await t
                 .expect(DevicesPage.findDeviceName(getDeviceNameApi[i]).innerText).eql(getDeviceNameApi[i]);
         }
@@ -58,16 +65,24 @@ import DevicesPage from '../pages/DevicesPage';
         const amountOfDevices = await DevicesPage.findDevices().count;
         //asserting that the list of devices on frontend is populated
         await t.expect(amountOfDevices).gt(0);
-        console.log(amountOfDevices);
+        Logger.info("------------------");
+        Logger.info("Amount of devices found on the UI: " + amountOfDevices);
+
         //verifying existence of edit buttons
+        Logger.info("------------------");
+        Logger.info("Verifying existence of edit button of each device...");
         for(let i = 0; i < amountOfDevices; i++){
             const editButtonExists = await DevicesPage.findEditButton(i).exists;
+            Logger.info("Device number " + i + " edit button is present: " + editButtonExists);
             await t.expect(editButtonExists).ok();
         }
 
         //verifying existence of remove buttons
+        Logger.info("------------------");
+        Logger.info("Verifying existence of remove button of each device...");
         for(let i = 0; i < amountOfDevices; i++){
             const removeButtonExists = await DevicesPage.findRemoveButton(i).exists;
+            Logger.info("Device number " + i + " remove button is present: " + removeButtonExists);
             await t.expect(removeButtonExists).ok();
         }
 

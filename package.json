@@ -8,16 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matheusvieira99/ninjaone-assessment.git"
+    "url": "git+https://github.com/matheusvieira99/ninja-one-assessment.git"
   },
   "author": "Matheus Vieira",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/matheusvieira99/ninjaone-assessment/issues"
+    "url": "https://github.com/matheusvieira99/ninja-one-assessment/issues"
   },
-  "homepage": "https://github.com/matheusvieira99/ninjaone-assessment#readme",
+  "homepage": "https://github.com/matheusvieira99/ninja-one-assessment#readme",
   "dependencies": {
     "jquery": "^3.6.1",
+    "js-logger": "^1.6.1",
     "testcafe": "^2.0.1"
   }
 }
