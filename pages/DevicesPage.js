@@ -29,6 +29,10 @@ class DevicesPage {
         return Selector('.device-main-box').with({visibilityCheck: true});
     }
 
+    findAddDevice(){
+        return Selector('.submitButton');
+    }
+
 }
 
 export default new DevicesPage();
