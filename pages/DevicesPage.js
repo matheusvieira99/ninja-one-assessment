@@ -26,7 +26,7 @@ class DevicesPage {
     }
     
     findDevices(){
-        return Selector('.device-main-box').with({visibilityCheck: true});
+        return Selector('.device-main-box', { timeout: 60000 }).with({visibilityCheck: true});
     }
 
     findAddDevice(){

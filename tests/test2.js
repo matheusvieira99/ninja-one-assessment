@@ -24,15 +24,17 @@ Logger.useDefaults();
             .typeText(AddDevicePage.findCapacity(), capacity)
             .click(AddDevicePage.findSaveButton());
 
-            const isDeviceNameVisible = await DevicesPage.findDeviceName(systemName).visible;
-            const isDevicetypeVisible = await DevicesPage.findDeviceType(type).visible;
-            const isDeviceCapacityVisible = await DevicesPage.findDeviceCapacity(capacity).visible;
-            // const isDeviceTypeVisible = await DevicesPage.findDeviceType(type).visible;
-            // const isDeviceCapacityVisible = await DevicesPage.findDeviceCapacity(capacity).visible;
+        const isDeviceNameVisible = await DevicesPage.findDeviceName(systemName).visible;
+        const isDevicetypeVisible = await DevicesPage.findDeviceType(type).visible;
+        const isDeviceCapacityVisible = await DevicesPage.findDeviceCapacity(capacity).visible;
+
         Logger.info("Amount of Devices on the UI: " + amountOfDevices);
         Logger.info("------------------");
         Logger.info("Device: " + systemName + " is properly created: " + isDeviceNameVisible);
         //step 2
+        await t
+            .eval(() => location.reload(true));
+
         await t
             .expect(isDeviceNameVisible).ok()
             .expect(isDevicetypeVisible).ok()
