@@ -2,5 +2,6 @@
     "skipJsErrors": true,
     "hostname": "localhost",
     "assertionTimeout": 5000,
-    "speed": 0.01
+    "speed": 0.01,
+    "pageRequestTimeout": 50000
 }

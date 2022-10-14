@@ -61,7 +61,7 @@ Logger.useDefaults();
 
     //step 3
     test('should validate edit and delete buttons in all devices', async t => {
-        await t.wait(1500);
+        await t.wait(3000);
         //counting the number of devices
         const amountOfDevices = await DevicesPage.findDevices().count;
         //asserting that the list of devices on frontend is populated
