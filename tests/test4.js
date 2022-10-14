@@ -6,7 +6,7 @@ Logger.useDefaults();
     fixture('test4')
         .page("http://localhost:3001");
 
-        test('should validate creation of device', async t =>{
+        test('should validate removal of device', async t =>{
             const results = await t.request("http://localhost:3000/devices");
             const json = results.body;
             let result = json.map(a => a.id);
