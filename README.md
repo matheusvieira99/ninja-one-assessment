@@ -11,9 +11,6 @@
     npm i
     
     
- <h2>Run:</h2>
-      
-    
-    npm start
+ 
     
     
