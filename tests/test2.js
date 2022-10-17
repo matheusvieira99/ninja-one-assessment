@@ -24,7 +24,7 @@ Logger.useDefaults();
             .click(AddDevicePage.findSaveButton());
 
             const isDeviceNameVisible = await DevicesPage.findDeviceName(systemName).visible;
-            const isDevicetypeVisible = await DevicesPage.findDeviceName(systemName).visible;
+            const isDevicetypeVisible = await DevicesPage.findDeviceType(type).visible;
             const isDeviceCapacityVisible = await DevicesPage.findDeviceCapacity(capacity).visible;
             
             Logger.info("------------------");
